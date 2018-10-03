@@ -7,13 +7,16 @@
     "start": "webpack-dev-server --port=8080",
     "build": "./node_modules/.bin/babel lib --out-dir dist",
     "deploy": "rm -rf .publish && npm run build && github-pages-deploy",
+    "pretest": "npm run build",
+    "prepublish": "npm test",
+    "test": "mocha"
   },
   "github-pages-deploy": {
     "src": "example"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/imnas/react-ui-tree.git"
+    "url": "https://github.com/pqx/react-ui-tree.git"
   },
   "keywords": [
     "react",
@@ -25,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/pqx/react-ui-tree/issues"
   },
-  "homepage": "https://github.com/imnas/react-ui-tree",
+  "homepage": "https://github.com/pqx/react-ui-tree",
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
